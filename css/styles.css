@@ -2,6 +2,7 @@
   --primary-text-color: #212121;
   --secondary-text-color: #757575;
   --secondary-color: #2196f3;
+  --main-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* --------/ ЦВЕТ ИКОНОК/---------------- */
@@ -140,7 +141,7 @@ header {
 .header-contacts a {
   position: relative;
   padding: 32px 0;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--main-transition);
 }
 
 .navigation a:hover,
@@ -189,7 +190,7 @@ header .header-contacts a {
 .smartphone {
   fill: var(--secondary-text-color);
   margin-right: 10px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--main-transition);
 }
 
 .header-contacts a:hover svg,
@@ -254,7 +255,7 @@ header .header-contacts a {
   min-width: 200px;
   min-height: 50px;
   border-radius: 4px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--main-transition);
 }
 
 .hero button:hover,
@@ -339,7 +340,7 @@ header .header-contacts a {
 
 .social-link svg {
   fill: currentColor;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms var(--main-transition);
 }
 
 .social-link:hover,
@@ -362,7 +363,7 @@ header .header-contacts a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--main-transition);
 }
 
 .team {
@@ -445,7 +446,7 @@ header .header-contacts a {
 
 .company-logo {
   fill: currentColor;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--main-transition);
 }
 
 /*================= ПОРТФОЛИО  ================= */
@@ -469,9 +470,8 @@ header .header-contacts a {
   background-color: #f5f4fa;
   padding: 6px 22px;
   border-radius: 4px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--main-transition),
+    color var(--main-transition), box-shadow var(--main-transition);
 }
 
 .filter {
@@ -511,7 +511,7 @@ header .header-contacts a {
   padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(101%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--main-transition);
 }
 
 .example-list {
@@ -592,7 +592,7 @@ header .header-contacts a {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--main-transition);
 }
 .modal {
   position: absolute;
@@ -602,7 +602,7 @@ header .header-contacts a {
   min-width: 528px;
   min-height: 581px;
   background-color: #fff;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--main-transition);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -661,7 +661,7 @@ footer a {
   font-size: 14px;
   letter-spacing: 0.03em;
   line-height: 1.7em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--main-transition);
 }
 
 address {
@@ -694,7 +694,7 @@ address {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--main-transition);
 }
 
 .footer-social-item:not(:last-child) {
