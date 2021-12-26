@@ -624,6 +624,9 @@ header .header-contacts a {
   background-color: #fff;
   transition: transform var(--main-transition);
   padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -654,6 +657,15 @@ header .header-contacts a {
 }
 
 /* ================ ФОРМА МОДАЛКИ ================= */
+.close {
+  fill: #000;
+  transition: fill var(--main-transition);
+}
+
+.close:hover {
+  fill: var(--secondary-color);
+}
+
 .modal h2 {
   color: var(--primary-text-color);
   font-size: 20px;
@@ -664,14 +676,196 @@ header .header-contacts a {
 }
 
 .form-field {
+  position: relative;
+  display: block;
   width: 100%;
+  height: 40px;
+  margin-bottom: 28px;
+}
+
+.form-field:nth-child(4) {
+  margin-bottom: 0px;
 }
 
 .modal-input {
   width: 100%;
-  height: 40px;
+  height: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: none;
+  padding-left: 42px;
+  font-size: 14px;
+  line-height: 1.17;
+  color: var(--secondary-text-color);
+  transition: border-color var(--main-transition);
+}
+
+.modal-comment {
+  transition: border-color var(--main-transition);
+}
+
+.modal-input:focus,
+.modal-comment:focus {
+  border-color: var(--secondary-color);
+}
+
+.modal-name {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 42px;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  color: var(--secondary-text-color);
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  transform: translateY(-50%);
+  transition: transform var(--main-transition);
+}
+
+.form-field:focus-within > .modal-name,
+.modal-input:not(:placeholder-shown) + .modal-name {
+  transform: translate(-42px, -3.1em);
+}
+
+.icon-modal {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  fill: currentColor;
+  transition: fill var(--main-transition);
+}
+
+.form-field:focus-within > .icon-modal {
+  fill: var(--secondary-color);
+}
+
+.comment {
+  min-height: 120px;
+}
+.modal-comment {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  resize: none;
+  outline: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.17;
+  color: var(--secondary-text-color);
+}
+
+.modal-comment::placeholder {
+  position: absolute;
+  font-size: 14px;
+  line-height: 1.17;
+  color: #75757580;
+  z-index: 10;
+}
+
+.label-position {
+  position: relative;
+  display: block;
+}
+
+.comment-label {
+  position: absolute;
+  top: -1.5em;
+  left: 0;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  padding-bottom: 4px;
+  color: var(--secondary-text-color);
+}
+.privacy-link {
+  color: var(--secondary-color);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.privacy-link:hover {
+  cursor: pointer;
+}
+
+.privacy-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: var(--secondary-color);
+  padding-bottom: 30px;
+}
+
+.privacy-label {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+}
+.check-box {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid #000;
+  border-radius: 2px;
+  margin-right: 9px;
+  transition: border var(--main-transition);
+}
+
+.hidden-checkbox:checked + .check-box {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  background-image: url("../images/icon check.svg");
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.hidden-checkbox:focus ~ .check-box {
+  border: 2px solid var(--secondary-color);
+}
+
+.privacy-container:hover .check-box {
+  border: 2px solid var(--secondary-color);
+}
+
+.hidden-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.modal-button {
+  display: block;
+  min-width: 200px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.87;
+  color: #fff;
+  padding: 0;
+  margin: 0 auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color var(--main-transition);
+}
+
+.modal-button:hover {
+  background-color: #188ce8;
 }
 
 /* ==============  ФУТЕР  ============ */
@@ -682,7 +876,6 @@ footer {
 
 .footer {
   display: flex;
-  /* justify-content: space-between; */
   align-items: baseline;
 }
 
@@ -775,6 +968,7 @@ address {
   color: #fff;
   transition: border var(--main-transition);
   outline: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 
 .subscribe input:focus {

@@ -361,12 +361,51 @@
                     </svg>             
             </button>
             <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
-            <form action="" class="modal-form">
-                <label class="form-field">
-                    <input type="text" name="name" class="modal-input">
+           
+    <!-- ===================== ФОРМА МОДАЛКИ =========================        -->
+            <form class="modal-form">
+                <label class="form-field">                    
+                    <input type="text" name="name" class="modal-input" autocomplete="off" placeholder=" ">
                     <span class="modal-name">Имя</span>
+                    <svg class="icon-modal" width="12" height="12">
+                        <use href="images/sprite.svg#icon-name"></use>
+                    </svg>
+                    
                 </label>
-            </form>
+           
+                <label class="form-field">
+                    <input type="tel" name="tel" class="modal-input" autocomplete="off"  placeholder=" ">
+                    <span class="modal-name">Телефон</span>
+                    <svg class="icon-modal" width="13" height="13">
+                        <use href="images/sprite.svg#icon-tel"></use>
+                    </svg>
+                    
+                </label>
+                        
+                <label class="form-field">
+                    <input type="email" name="mail" class="modal-input" autocomplete="off"  placeholder=" ">
+                    <span class="modal-name">Почта</span>
+                    <svg class="icon-modal" width="15" height="12">
+                        <use href="images/sprite.svg#icon-mail"></use>
+                    </svg>                    
+                </label>
+
+                <label class="form-field comment">
+                    <span class="comment-label">Комментарий</span>
+                    <textarea name="comment" class="modal-comment" placeholder="Введите текст"></textarea>
+                </label>
+                
+                <label class="privacy-container">
+                        <input class="hidden-checkbox" type="checkbox" name="privacy" id="privacy-check">
+                        <span class="check-box"></span>
+                        <span class="privacy-label">
+                            Соглашаюсь с рассылкой и принимаю <span class=privacy-link>Условия договора</span>
+                        </span>
+                </label> 
+                <button type="submit" class="modal-button">
+                    Отправить
+                </button>
+           </form>
         </div>
     </div>
 
